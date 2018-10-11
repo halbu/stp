@@ -10,18 +10,10 @@ const styles = (theme) => ({
     backgroundColor: '#e0e0e0',
     margin: "0 auto",
     marginBottom: 6,
-    width: 200,
   },
 });
 
 class CraftingStationCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        crafting_station: props.crafting_station,
-    };
-  }
-
   render() {
     const { classes } = this.props;
 

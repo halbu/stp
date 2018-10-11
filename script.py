@@ -9,6 +9,7 @@ import xml.etree.ElementTree
 import pprint
 
 recipes = []
+recipe_dict = {} #this is bad
 parsed = []
 counter = 0
 
@@ -33,7 +34,7 @@ def parse_into_recipes(myfile):
     recipe['recipe_name'] = recipe_data[0].text
     recipe['ingredients'] = []
     recipe['index_value'] = counter
-    recipe['crafting_station'] = station
+    recipe['crafting_station'] = [station]
     for c in recipe_data[1]:
       ingredient = {}
       ingredient[c.tag] = c.text
@@ -42,8 +43,12 @@ def parse_into_recipes(myfile):
         
     if recipe_data[0].text not in parsed:
       recipes.append(recipe)
+      recipe_dict[recipe_data[0].text] = counter
       parsed.append(recipe_data[0].text)
       counter += 1
+    else:
+      recipe_number = recipe_dict[recipe_data[0].text]
+      recipes[recipe_number]["crafting_station"].append(station)
 
 if __name__ == '__main__':
   main()

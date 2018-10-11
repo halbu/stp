@@ -12,7 +12,6 @@ import ImageLoader from '../image-loader/Image-Loader';
 const styles = (theme) => ({
   card: {
     backgroundColor: '#e0e0e0',
-    width: 325,
     margin: "0 auto",
   },
   divider: {
@@ -31,7 +30,7 @@ class MainCard extends Component {
 
   render() {
     const { classes } = this.props;
-
+    console.log(this.props.item);
     return (
       <Card className={classes.card}>
       <CardContent>

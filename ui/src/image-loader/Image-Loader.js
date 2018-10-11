@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class ImageLoader extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let asset;
         try {
