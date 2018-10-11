@@ -1,27 +1,35 @@
 self.__precacheManifest = [
   {
-    "revision": "7d74cc5e3f1ba26669a771ba6a91f90d",
-    "url": "/stp/static/media/ItemKitConveyorSorter.7d74cc5e.png"
+    "revision": "f6b57b175cf974d3a08dd97d830b182d",
+    "url": "/stp/static/media/ItemKitCentrifuge.f6b57b17.png"
   },
   {
-    "revision": "e3d0f5c64438c5a74b03",
-    "url": "/stp/static/css/main.509b9991.chunk.css"
+    "revision": "636d060d44219b8ce8bd",
+    "url": "/stp/static/css/main.b781a21d.chunk.css"
   },
   {
-    "revision": "0649fa9f3646d8461037",
-    "url": "/stp/static/js/1.0649fa9f.chunk.js"
+    "revision": "7ec3943ed355c8772891",
+    "url": "/stp/static/js/1.7ec3943e.chunk.js"
   },
   {
     "revision": "66d339ab9cf5bc7f1b4e",
     "url": "/stp/static/js/runtime~main.66d339ab.js"
   },
   {
+    "revision": "5bad69cdf7450c0a818d73648b063d85",
+    "url": "/stp/static/media/Circuitboard.5bad69cd.png"
+  },
+  {
     "revision": "ee13f98d212b2eac85db3bb1a5b45f3e",
     "url": "/stp/static/media/ApplianceChemistryStation.ee13f98d.png"
   },
   {
-    "revision": "5bad69cdf7450c0a818d73648b063d85",
-    "url": "/stp/static/media/Circuitboard.5bad69cd.png"
+    "revision": "46fe11e1dcb3cc63673cf1d3ca8baf46",
+    "url": "/stp/static/media/ArcFurnace.46fe11e1.png"
+  },
+  {
+    "revision": "58be5630c53312ddad30cebbe888a1af",
+    "url": "/stp/static/media/Autolathe.58be5630.png"
   },
   {
     "revision": "c3a047004819d809d01e6494344aaab1",
@@ -82,6 +90,22 @@ self.__precacheManifest = [
   {
     "revision": "bccc48ac20ee262a969b78cf670c0630",
     "url": "/stp/static/media/DynamicScrubber.bccc48ac.png"
+  },
+  {
+    "revision": "ed133d164945affcc13b43cc085dd89e",
+    "url": "/stp/static/media/ElectronicsPrinter.ed133d16.png"
+  },
+  {
+    "revision": "3d7015f22ea7407a68ff96334b549a15",
+    "url": "/stp/static/media/Fabricator.3d7015f2.png"
+  },
+  {
+    "revision": "61745ad1b12ccbfe2ab2c448072ae373",
+    "url": "/stp/static/media/Furnace.61745ad1.png"
+  },
+  {
+    "revision": "38081d004afb6a837b29f22fb59bb5f9",
+    "url": "/stp/static/media/HydraulicPipeBender.38081d00.png"
   },
   {
     "revision": "8852795903cc8e8cef4f8c3a874cc73a",
@@ -272,16 +296,16 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitBasket.a1684c82.png"
   },
   {
-    "revision": "f6b57b175cf974d3a08dd97d830b182d",
-    "url": "/stp/static/media/ItemKitCentrifuge.f6b57b17.png"
+    "revision": "636d060d44219b8ce8bd",
+    "url": "/stp/static/js/main.636d060d.chunk.js"
   },
   {
     "revision": "3acd894e32520bcedd19e34c7bcc6716",
     "url": "/stp/static/media/ItemKitConveyor.3acd894e.png"
   },
   {
-    "revision": "e3d0f5c64438c5a74b03",
-    "url": "/stp/static/js/main.e3d0f5c6.chunk.js"
+    "revision": "7d74cc5e3f1ba26669a771ba6a91f90d",
+    "url": "/stp/static/media/ItemKitConveyorSorter.7d74cc5e.png"
   },
   {
     "revision": "0fab5c423d46a368a371d4571d80a788",
@@ -552,15 +576,23 @@ self.__precacheManifest = [
     "url": "/stp/static/media/OrganLungs.b252656a.png"
   },
   {
+    "revision": "d9cd1449cb336556b5b2111d64de14b9",
+    "url": "/stp/static/media/ToolManufactory.d9cd1449.png"
+  },
+  {
     "revision": "576c3a358fcf753338eab5afec567949",
     "url": "/stp/static/media/UniformOrangeJumpSuit.576c3a35.png"
+  },
+  {
+    "revision": "0d482d21787c96fd4f5a0b2c765409e2",
+    "url": "/stp/static/media/HydraulicPipeBender.0d482d21.png"
   },
   {
     "revision": "6d0d973305e5e7f5a7e16435357c887f",
     "url": "/stp/static/media/list-item-hover.6d0d9733.png"
   },
   {
-    "revision": "cb93cc000586076e7877537a53860386",
+    "revision": "290a624dd720414273ed170e9185f8c3",
     "url": "/stp/index.html"
   }
 ];
