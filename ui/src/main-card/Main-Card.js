@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Main-Card.css';
 import recipes from '../../src/assets/output.json';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -13,6 +12,7 @@ const styles = (theme) => ({
   card: {
     backgroundColor: '#e0e0e0',
     margin: "0 auto",
+    width: 300,
   },
   divider: {
     margin: 10,
@@ -30,15 +30,15 @@ class MainCard extends Component {
 
   render() {
     const { classes } = this.props;
-    console.log(this.props.item);
+
     return (
       <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5">
           {recipes[this.props.item].recipe_name}
         </Typography>
-        <ImageLoader picture={recipes[this.props.item].recipe_name} />
         <Divider className={classes.divider} />
+        <ImageLoader picture={recipes[this.props.item].recipe_name} />
         {recipes[this.props.item].ingredients.map((recipe, i) => {     
           let ing = Object.keys(recipe)[0];
           let amt = recipe[ing];

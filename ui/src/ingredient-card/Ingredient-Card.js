@@ -10,10 +10,11 @@ const styles = (theme) => ({
     backgroundColor: '#e0e0e0',
     margin: "0 auto",
     marginBottom: 6,
+    width: 300,
   },
 });
 
-class IngredientList extends Component {
+class IngredientCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,4 +38,4 @@ class IngredientList extends Component {
   }
 }
 
-export default withStyles(styles)(IngredientList);
+export default withStyles(styles)(IngredientCard);
