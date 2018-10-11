@@ -66,7 +66,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Typography className={classes.titlediv} variant="h5">
-            {/* stationeers quick reference */}
+            stationeers quick reference
           </Typography>
           <div className={classes.selectdiv}>
             <Select
