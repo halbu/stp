@@ -83,6 +83,9 @@ class App extends Component {
     const { classes } = this.props;
     const { selectedOption } = this.state;
 
+    console.log(this.activeItem());
+    console.log(this.activeItem().stations);
+
     return (
       <div className="App">
         <header className="App-header">
@@ -106,15 +109,17 @@ class App extends Component {
             <Grid container className={classes.cardcontainer} direction="row" spacing={40}>
 
               <Grid item className={classes.griditem} xs={4}>
-                Crafting Station(s)<br/><br/>
-                {this.activeItem().crafting_station.map((crafting_station, i) => {
-                    return ( <CraftingStationCard key={i} crafting_station={crafting_station} onSelectItem={this.handleItemChange}/> )
-                  })}
-              </Grid>
-              <Grid item className={classes.griditem} xs={4}>
                 Item<br/><br/>
                 <MainCard item={this.state.activeItemNumber} />
               </Grid>
+
+              <Grid item className={classes.griditem} xs={4}>
+                Crafting Station(s)<br/><br/>
+                {this.activeItem().stations.map((crafting_station, i) => {
+                    return ( <CraftingStationCard key={i} crafting_station={crafting_station} onSelectItem={this.handleItemChange}/> )
+                  })}
+              </Grid>
+
               <Grid item className={classes.griditem} xs={4}>
                 Requirements<br/><br/>
                 {this.activeItem().ingredients.map((item, i) => {
