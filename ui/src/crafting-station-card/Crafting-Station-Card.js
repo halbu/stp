@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import recipes from '../../src/assets/output.json';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -20,11 +21,29 @@ const styles = (theme) => ({
 });
 
 class CraftingStationCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state= {
+      parentActiveItem: this.props.itemno,
+    }
+  }
+
+  findByName(recipeName) {
+    for (var i=0; i!==recipes.length; ++i) {
+      if (recipes[i].recipe_name === ('ItemKit' + recipeName)) {
+        // console.log(i);
+        return i;
+      }
+    }
+    console.log("Failed to find recipe");
+    return 0;    
+  }
+
   render() {
     const { classes } = this.props;
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} onClick={this.clickHandler}>
       <CardContent>
         <Typography variant="h6">
           {this.props.crafting_station}
@@ -34,6 +53,10 @@ class CraftingStationCard extends Component {
         <br/>
       </CardContent>
     </Card>)
+  }
+
+  clickHandler = () => {
+    this.props.onSelectItem(this.findByName(this.props.crafting_station));
   }
 }
 

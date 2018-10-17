@@ -38,10 +38,25 @@ class App extends Component {
       selectedOption: null,
       history: [], // TODO back button or something
     };
+
+    // this could definitely be less ugly
+    for (var i=0; i!==recipes.length; ++i) {
+      this.state.options.push({
+        label: recipes[i].recipe_name, value: recipes[i].index_value
+      });
+    }
+  }
+
+  findNameByIndex(indexValue) {
+    return recipes[indexValue].recipe_name;
+  }
+
+  componentDidMount() {
+    this.handleChange( {value: 88});
   }
 
   handleChange (selectedOption) {
-    this.setState({ selectedOption });
+    // this.setState({ selectedOption });
     this.setState({ activeItemNumber: selectedOption.value });
   }
 
@@ -49,12 +64,18 @@ class App extends Component {
     return recipes[this.state.activeItemNumber];
   }
 
-  componentDidMount() {
-    // this could definitely be less ugly
-    for (var i=0; i!==recipes.length; ++i) {
-      this.state.options.push({
-        label: recipes[i].recipe_name, value: recipes[i].index_value
-      });
+  handleItemChange = (newItemNo) => {
+    this.state.history.push(this.state.activeItemNumber);
+    console.log(this.state.history);
+    this.setState({activeItemNumber: newItemNo});
+  }
+
+  previousRecipeName() {
+    if (this.state.history.length < 1) {
+      return 'No previous recipe';
+    } else {
+      var previousRecipeIndex = this.state.history[this.state.history.length - 1];
+      return recipes[previousRecipeIndex].recipe_name;
     }
   }
 
@@ -75,6 +96,11 @@ class App extends Component {
               onChange={this.handleChange.bind(this)}
               options={this.state.options}
             />
+            
+          <Typography className={classes.titlediv} variant="h5">
+          {this.previousRecipeName()}
+          </Typography>
+            
           </div>
 
             <Grid container className={classes.cardcontainer} direction="row" spacing={40}>
@@ -82,7 +108,7 @@ class App extends Component {
               <Grid item className={classes.griditem} xs={4}>
                 Crafting Station(s)<br/><br/>
                 {this.activeItem().crafting_station.map((crafting_station, i) => {
-                    return ( <CraftingStationCard key={i} crafting_station={crafting_station}/> )
+                    return ( <CraftingStationCard key={i} crafting_station={crafting_station} onSelectItem={this.handleItemChange}/> )
                   })}
               </Grid>
               <Grid item className={classes.griditem} xs={4}>

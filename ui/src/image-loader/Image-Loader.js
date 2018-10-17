@@ -25,9 +25,11 @@ class ImageLoader extends Component {
     render() {
         const { classes } = this.props;
         let asset;
+        // all Circuitboard-type items share the same sprite, so intercept these requests and serve the generic image
         if (this.props.picture.substr(0, 12) === 'Circuitboard') {
-            let asset = require(`../assets/sprites/Circuitboard.png`);
-            return (<img className={classes.image} src={asset} alt="Sprite for {this.props.picture}" />)
+          let asset = require(`../assets/sprites/Circuitboard.png`);
+          return (<img className={classes.image} src={asset} alt="Sprite for {this.props.picture}" />)
+        // same for Cartridges
         } else if (this.props.picture.substr(0, 9) === 'Cartridge') {
             let asset = require(`../assets/sprites/ItemCartridge.png`);
             return (<img className={classes.image}  src={asset} alt="Sprite for {this.props.picture}" />)
