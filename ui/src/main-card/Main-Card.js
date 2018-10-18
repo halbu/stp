@@ -39,14 +39,6 @@ class MainCard extends Component {
         </Typography>
         <Divider className={classes.divider} />
         <ImageLoader picture={recipes[this.props.item].recipe_name} />
-        {recipes[this.props.item].ingredients.map((recipe, i) => {     
-          let ing = Object.keys(recipe)[0];
-          let amt = recipe[ing];
-            return (
-              <Typography variant="h5" key={i} color="textSecondary">
-                {ing} : {amt}
-            </Typography>) 
-          })}
       </CardContent>
     </Card>)
   }

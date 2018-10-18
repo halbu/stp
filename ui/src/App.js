@@ -34,6 +34,7 @@ class App extends Component {
     super(props);
     this.state = {
       activeItemNumber: 179,
+      activeStationNumber: 0,
       options: [],
       selectedOption: null,
       history: [], // TODO back button or something
@@ -56,7 +57,6 @@ class App extends Component {
   }
 
   handleChange (selectedOption) {
-    // this.setState({ selectedOption });
     this.setState({ activeItemNumber: selectedOption.value });
   }
 
@@ -64,10 +64,9 @@ class App extends Component {
     return recipes[this.state.activeItemNumber];
   }
 
-  handleItemChange = (newItemNo) => {
-    this.state.history.push(this.state.activeItemNumber);
-    console.log(this.state.history);
-    this.setState({activeItemNumber: newItemNo});
+  handleStationChange = (newStationNumber) => {
+    this.state.history.push(this.state.activeStationNumber);
+    this.setState({activeStationNumber: newStationNumber});
   }
 
   previousRecipeName() {
@@ -85,6 +84,8 @@ class App extends Component {
 
     console.log(this.activeItem());
     console.log(this.activeItem().stations);
+    console.log(this.activeItem().stations[Object.keys(this.activeItem().stations)[0]]);
+    console.log('active station number: ' + this.state.activeStationNumber);
 
     return (
       <div className="App">
@@ -98,12 +99,7 @@ class App extends Component {
               value={selectedOption}
               onChange={this.handleChange.bind(this)}
               options={this.state.options}
-            />
-            
-          <Typography className={classes.titlediv} variant="h5">
-          {this.previousRecipeName()}
-          </Typography>
-            
+            />            
           </div>
 
             <Grid container className={classes.cardcontainer} direction="row" spacing={40}>
@@ -115,14 +111,14 @@ class App extends Component {
 
               <Grid item className={classes.griditem} xs={4}>
                 Crafting Station(s)<br/><br/>
-                {this.activeItem().stations.map((crafting_station, i) => {
-                    return ( <CraftingStationCard key={i} crafting_station={crafting_station} onSelectItem={this.handleItemChange}/> )
-                  })}
+                {Object.keys(this.activeItem().stations).map((station, i) => {
+                  return ( <CraftingStationCard key={i} myIndexValue={i} crafting_station={station} onSelectItem={this.handleStationChange}/> )
+                })}
               </Grid>
 
               <Grid item className={classes.griditem} xs={4}>
                 Requirements<br/><br/>
-                {this.activeItem().ingredients.map((item, i) => {
+                {this.activeItem().stations[Object.keys(this.activeItem().stations)[this.state.activeStationNumber]].ingredients.map((item, i) => {
                     return ( <IngredientCard key={i} item={item} /> )
                   })}
               </Grid>

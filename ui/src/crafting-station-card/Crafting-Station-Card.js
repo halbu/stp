@@ -23,24 +23,30 @@ const styles = (theme) => ({
 class CraftingStationCard extends Component {
   constructor(props) {
     super(props);
+    console.log('!!!!');
+    console.log(props);
     this.state= {
       parentActiveItem: this.props.itemno,
+      myIndexValue: this.props.myIndexValue,
     }
   }
 
-  findByName(recipeName) {
-    for (var i=0; i!==recipes.length; ++i) {
-      if (recipes[i].recipe_name === ('ItemKit' + recipeName)) {
-        // console.log(i);
-        return i;
-      }
-    }
-    console.log("Failed to find recipe");
-    return 0;    
-  }
+  // findByName(recipeName) {
+  //   for (var i=0; i!==recipes.length; ++i) {
+  //     if (recipes[i].recipe_name === ('ItemKit' + recipeName)) {
+  //       // console.log(i);
+  //       return i;
+  //     }
+  //   }
+  //   console.log("Failed to find recipe");
+  //   return 0;    
+  // }
 
   render() {
     const { classes } = this.props;
+
+    console.log('================');
+    console.log(this.props);
 
     return (
       <Card className={classes.card} onClick={this.clickHandler}>
@@ -56,7 +62,7 @@ class CraftingStationCard extends Component {
   }
 
   clickHandler = () => {
-    this.props.onSelectItem(this.findByName(this.props.crafting_station));
+    this.props.onSelectItem(this.props.myIndexValue);
   }
 }
 
