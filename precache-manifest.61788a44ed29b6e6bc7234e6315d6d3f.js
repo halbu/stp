@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitCentrifuge.f6b57b17.png"
   },
   {
-    "revision": "595fc821225c840b3fd9",
-    "url": "/stp/static/css/main.84ffd388.chunk.css"
+    "revision": "bf94692def71a021bef5",
+    "url": "/stp/static/css/main.45b89ac7.chunk.css"
   },
   {
-    "revision": "fd65ee645920de0c30aa",
-    "url": "/stp/static/js/1.fd65ee64.chunk.js"
+    "revision": "4f1135dd5dc6f2fd22c2",
+    "url": "/stp/static/js/1.4f1135dd.chunk.js"
   },
   {
     "revision": "66d339ab9cf5bc7f1b4e",
@@ -296,8 +296,8 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitBasket.a1684c82.png"
   },
   {
-    "revision": "595fc821225c840b3fd9",
-    "url": "/stp/static/js/main.595fc821.chunk.js"
+    "revision": "bf94692def71a021bef5",
+    "url": "/stp/static/js/main.bf94692d.chunk.js"
   },
   {
     "revision": "3acd894e32520bcedd19e34c7bcc6716",
@@ -576,6 +576,10 @@ self.__precacheManifest = [
     "url": "/stp/static/media/OrganLungs.b252656a.png"
   },
   {
+    "revision": "108526c1ff3ea968fd9ec94de4e8fe6e",
+    "url": "/stp/static/media/OrganicsPrinter.108526c1.png"
+  },
+  {
     "revision": "d9cd1449cb336556b5b2111d64de14b9",
     "url": "/stp/static/media/ToolManufactory.d9cd1449.png"
   },
@@ -588,11 +592,7 @@ self.__precacheManifest = [
     "url": "/stp/static/media/HydraulicPipeBender.0d482d21.png"
   },
   {
-    "revision": "6d0d973305e5e7f5a7e16435357c887f",
-    "url": "/stp/static/media/list-item-hover.6d0d9733.png"
-  },
-  {
-    "revision": "58cd6ce9ea08b3c3506b6102932ddb7f",
+    "revision": "eebfa2c2b782c3f21892a727fec8685b",
     "url": "/stp/index.html"
   }
 ];
