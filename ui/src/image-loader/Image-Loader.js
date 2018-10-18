@@ -33,6 +33,10 @@ class ImageLoader extends Component {
         } else if (this.props.picture.substr(0, 9) === 'Cartridge') {
             let asset = require(`../assets/sprites/ItemCartridge.png`);
             return (<img className={classes.image}  src={asset} alt="Sprite for {this.props.picture}" />)
+        // special-case the Microwave
+        } else if (this.props.picture === 'Microwave') {
+            let asset = require(`../assets/sprites/ApplianceMicrowave.png`);
+            return (<img className={classes.image}  src={asset} alt="Sprite for {this.props.picture}" />)
         } else {
             // Better try-catch as we're requesting an unknown image from the assets
             try {
@@ -40,6 +44,7 @@ class ImageLoader extends Component {
                 return (<img className={classes.image}  src={asset} alt="Sprite for {this.props.picture}" />)
             }
             catch (e) {
+                console.log('failed to find ' + this.props.picture);
                 return null; // Oh well, never mind!
             }
         }
