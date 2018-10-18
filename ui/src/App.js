@@ -11,21 +11,21 @@ import CraftingStationCard from './crafting-station-card/Crafting-Station-Card';
 
 const styles = (theme) => ({
   cardcontainer: {
-    backgroundColor: '#ffffff',
-  },
-  searchboxcontainer: {
-    backgroundColor: '#888',
+    marginTop: 10,
   },
   searchbox: {
     width: 700,
   },
   selectdiv: {
-    marginBottom: 100,
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: 50,
+    textAlign: 'center',
   },
   titlediv: {
     color: '#fff',
     marginTop: 20,
-    marginBottom: 75,
+    marginBottom: 40,
   },
 });
 
@@ -33,7 +33,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItemNumber: 179,
+      activeItemNumber: 0,
       activeStationNumber: 0,
       options: [],
       selectedOption: null,
@@ -53,11 +53,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.handleChange( {value: 88});
+    this.handleChange( {value: 119});
   }
 
   handleChange (selectedOption) {
-    this.setState({ activeItemNumber: selectedOption.value });
+    this.setState({ activeItemNumber: selectedOption.value, activeStationNumber: 0 });
   }
 
   activeItem() {
@@ -83,26 +83,24 @@ class App extends Component {
     const { classes } = this.props;
     const { selectedOption } = this.state;
 
-    console.log(this.activeItem());
-    console.log(this.activeItem().stations);
-    console.log(this.activeItem().stations[Object.keys(this.activeItem().stations)[0]]);
-    console.log('active station number: ' + this.state.activeStationNumber);
-
     return (
       <div className="App">
         <header className="App-header">
-          <Typography className={classes.titlediv} variant="h5">
-            stationeers quick reference
-          </Typography>
-          <div className={classes.selectdiv}>
-            <Select
-              className={classes.searchbox}
-              value={selectedOption}
-              onChange={this.handleChange.bind(this)}
-              options={this.state.options}
-            />            
+          <div style={{backgroundColor: '#606060', width: '100%'}}>
+            <Typography className={classes.titlediv} variant="h5">
+              stationeers quick reference
+            </Typography>
+            <div className={classes.selectdiv}>
+              <Select
+                className={classes.searchbox}
+                value={selectedOption}
+                onChange={this.handleChange.bind(this)}
+                options={this.state.options}
+              />            
+            </div>
           </div>
 
+          <div style={{ maxWidth: 1000 }}>
             <Grid container className={classes.cardcontainer} direction="row" spacing={40}>
 
               <Grid item className={classes.griditem} xs={4}>
@@ -111,23 +109,22 @@ class App extends Component {
               </Grid>
 
               <Grid item className={classes.griditem} xs={4}>
-                Crafting Station(s)<br/><br/>
+                Crafted In<br/><br/>
                 {Object.keys(this.activeItem().stations).map((station, i) => {
-                  console.log('this happens');
                   return ( <CraftingStationCard key={i} myIndexValue={i}
-                    myColor={(i===this.state.activeStationNumber)?'#e8e8ff':'#e8e8e8'}
+                    myColor={(i===this.state.activeStationNumber)?'#d0d0ff':'#e8e8e8'}
                     crafting_station={station} onSelectItem={this.handleStationChange}/> )
                 })}
               </Grid>
 
               <Grid item className={classes.griditem} xs={4}>
-                Requirements<br/><br/>
+                Requires<br/><br/>
                 {this.activeItem().stations[Object.keys(this.activeItem().stations)[this.state.activeStationNumber]].ingredients.map((item, i) => {
                     return ( <IngredientCard key={i} item={item} /> )
                   })}
               </Grid>
-
-          </Grid>
+            </Grid>
+          </div>
         </header>
       </div>
     );

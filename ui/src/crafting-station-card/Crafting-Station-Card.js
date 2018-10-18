@@ -8,10 +8,17 @@ import ImageLoader from '../image-loader/Image-Loader';
 
 const styles = (theme) => ({
   card: {
-    backgroundColor: '#e0e0e0',
     margin: "0 auto",
-    marginBottom: 6,
+    marginBottom: 10,
     width: 300,
+    position: 'relative',
+    transition: 'all 150ms ease-in-out',
+    backgroundColor: '#e0e0e0',
+    '&:hover': {
+      cursor: 'pointer',
+      top: -3,
+      boxShadow: '0px 4px 8px #808080',
+    }
   },
   divider: {
     margin: 10,
@@ -19,13 +26,6 @@ const styles = (theme) => ({
 });
 
 class CraftingStationCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state= {
-      myIndexValue: this.props.myIndexValue,
-      myColor: this.props.myColor,
-    }
-  }
 
   render() {
     const { classes } = this.props;
@@ -33,7 +33,7 @@ class CraftingStationCard extends Component {
     return (
       <Card className={classes.card} style={{backgroundColor: this.props.myColor}} onClick={this.clickHandler}>
         <CardContent>
-          <Typography variant="h6">
+          <Typography variant="h5">
             {this.props.crafting_station}
           </Typography>
           <Divider className={classes.divider} />

@@ -15,13 +15,6 @@ const styles = (theme) => ({
 });
 
 class IngredientCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItemNumber: props.item,
-      suggestions: [],
-    };
-  }
 
   render() {
     const { classes } = this.props;
@@ -29,9 +22,9 @@ class IngredientCard extends Component {
     return (
       <Card className={classes.card}>
       <CardContent>
-        <Typography variant="h6">
-          {Object.keys(this.props.item)[0]} &nbsp;
-          ({this.props.item[Object.keys(this.props.item)[0]]})
+        <Typography variant="h5">
+          {Object.keys(this.props.item)[0]}:&nbsp;
+          {this.props.item[Object.keys(this.props.item)[0]]}
         </Typography>
       </CardContent>
     </Card>)

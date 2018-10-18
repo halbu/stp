@@ -20,13 +20,6 @@ const styles = (theme) => ({
 });
 
 class MainCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItemNumber: props.item,
-      suggestions: [],
-    };
-  }
 
   render() {
     const { classes } = this.props;
