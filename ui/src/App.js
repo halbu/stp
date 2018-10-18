@@ -67,6 +67,7 @@ class App extends Component {
   handleStationChange = (newStationNumber) => {
     this.state.history.push(this.state.activeStationNumber);
     this.setState({activeStationNumber: newStationNumber});
+    this.render();
   }
 
   previousRecipeName() {
@@ -112,7 +113,10 @@ class App extends Component {
               <Grid item className={classes.griditem} xs={4}>
                 Crafting Station(s)<br/><br/>
                 {Object.keys(this.activeItem().stations).map((station, i) => {
-                  return ( <CraftingStationCard key={i} myIndexValue={i} crafting_station={station} onSelectItem={this.handleStationChange}/> )
+                  console.log('this happens');
+                  return ( <CraftingStationCard key={i} myIndexValue={i}
+                    myColor={(i===this.state.activeStationNumber)?'#e8e8ff':'#e8e8e8'}
+                    crafting_station={station} onSelectItem={this.handleStationChange}/> )
                 })}
               </Grid>
 
