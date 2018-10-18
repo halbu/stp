@@ -1,7 +1,7 @@
 {
-  "main.css": "/stp/static/css/main.b781a21d.chunk.css",
-  "main.js": "/stp/static/js/main.d322242f.chunk.js",
-  "main.js.map": "/stp/static/js/main.d322242f.chunk.js.map",
+  "main.css": "/stp/static/css/main.84ffd388.chunk.css",
+  "main.js": "/stp/static/js/main.595fc821.chunk.js",
+  "main.js.map": "/stp/static/js/main.595fc821.chunk.js.map",
   "static/js/1.fd65ee64.chunk.js": "/stp/static/js/1.fd65ee64.chunk.js",
   "static/js/1.fd65ee64.chunk.js.map": "/stp/static/js/1.fd65ee64.chunk.js.map",
   "runtime~main.js": "/stp/static/js/runtime~main.66d339ab.js",
@@ -149,8 +149,8 @@
   "static/media/ToolManufactory.png": "/stp/static/media/ToolManufactory.d9cd1449.png",
   "static/media/UniformOrangeJumpSuit.png": "/stp/static/media/UniformOrangeJumpSuit.576c3a35.png",
   "static/media/list-item-hover.png": "/stp/static/media/list-item-hover.6d0d9733.png",
-  "static/css/main.b781a21d.chunk.css.map": "/stp/static/css/main.b781a21d.chunk.css.map",
+  "static/css/main.84ffd388.chunk.css.map": "/stp/static/css/main.84ffd388.chunk.css.map",
   "index.html": "/stp/index.html",
-  "precache-manifest.aa34f48c903f82804dfe421923bf1eda.js": "/stp/precache-manifest.aa34f48c903f82804dfe421923bf1eda.js",
+  "precache-manifest.0d436c6f343731606d2670b20d543b11.js": "/stp/precache-manifest.0d436c6f343731606d2670b20d543b11.js",
   "service-worker.js": "/stp/service-worker.js"
 }

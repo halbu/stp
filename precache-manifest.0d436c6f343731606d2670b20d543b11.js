@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitCentrifuge.f6b57b17.png"
   },
   {
-    "revision": "d322242f41de8bbfbb56",
-    "url": "/stp/static/css/main.b781a21d.chunk.css"
+    "revision": "595fc821225c840b3fd9",
+    "url": "/stp/static/css/main.84ffd388.chunk.css"
   },
   {
     "revision": "fd65ee645920de0c30aa",
@@ -296,8 +296,8 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitBasket.a1684c82.png"
   },
   {
-    "revision": "d322242f41de8bbfbb56",
-    "url": "/stp/static/js/main.d322242f.chunk.js"
+    "revision": "595fc821225c840b3fd9",
+    "url": "/stp/static/js/main.595fc821.chunk.js"
   },
   {
     "revision": "3acd894e32520bcedd19e34c7bcc6716",
@@ -592,7 +592,7 @@ self.__precacheManifest = [
     "url": "/stp/static/media/list-item-hover.6d0d9733.png"
   },
   {
-    "revision": "41489dfb3bca51f2085031f952c8a3d0",
+    "revision": "58cd6ce9ea08b3c3506b6102932ddb7f",
     "url": "/stp/index.html"
   }
 ];
