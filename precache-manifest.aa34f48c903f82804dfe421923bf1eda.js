@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitCentrifuge.f6b57b17.png"
   },
   {
-    "revision": "d024d4801fc64dad68b2",
+    "revision": "d322242f41de8bbfbb56",
     "url": "/stp/static/css/main.b781a21d.chunk.css"
   },
   {
-    "revision": "5b798f7e24ceab1dabf2",
-    "url": "/stp/static/js/1.5b798f7e.chunk.js"
+    "revision": "fd65ee645920de0c30aa",
+    "url": "/stp/static/js/1.fd65ee64.chunk.js"
   },
   {
     "revision": "66d339ab9cf5bc7f1b4e",
@@ -296,8 +296,8 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitBasket.a1684c82.png"
   },
   {
-    "revision": "d024d4801fc64dad68b2",
-    "url": "/stp/static/js/main.d024d480.chunk.js"
+    "revision": "d322242f41de8bbfbb56",
+    "url": "/stp/static/js/main.d322242f.chunk.js"
   },
   {
     "revision": "3acd894e32520bcedd19e34c7bcc6716",
@@ -592,7 +592,7 @@ self.__precacheManifest = [
     "url": "/stp/static/media/list-item-hover.6d0d9733.png"
   },
   {
-    "revision": "d8246bc3d19ccf40ae3c3ade3f780766",
+    "revision": "41489dfb3bca51f2085031f952c8a3d0",
     "url": "/stp/index.html"
   }
 ];
