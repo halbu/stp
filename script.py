@@ -6,7 +6,6 @@
 import json
 import os
 import xml.etree.ElementTree
-import pprint
 
 recipes = []
 recipe_dict = {} #this is bad
@@ -14,13 +13,14 @@ parsed = []
 counter = 0
 
 def main():
-  pp = pprint.PrettyPrinter(indent=2)
   files = os.listdir('./data')
+
   for myfile in files:
     parse_into_recipes(myfile)
+
   f = open("ui/src/assets/output.json", "w")
-  print('Writing to file...')
   f.write(json.dumps(recipes))
+
 
 def parse_into_recipes(myfile):
   global counter # ugh
@@ -40,9 +40,6 @@ def parse_into_recipes(myfile):
     recipe['index_value'] = counter
     recipe['stations'] = {}
 
-    # recipe['stations'][station] = {}
-    # recipe['stations'][station]['ingredients'] = []
-
     station_recipe = {}
     station_recipe['ingredients'] = []
 
@@ -54,14 +51,12 @@ def parse_into_recipes(myfile):
         
     if recipe_name not in parsed:
       recipes.append(recipe)
-      recipe_dict[recipe_name] = counter # add a dict entry with this recipe's name and index number e.g. recipe_dict['ItemIronCrateKit'] = 1
+      recipe_dict[recipe_name] = counter
       parsed.append(recipe_name)
       counter += 1
 
-    recipes[recipe_dict[recipe_name]]['stations'][station] = station_recipe # honestly
-    # else:
-    #   recipe_number = recipe_dict[recipe_name]
-    #   recipes[recipe_number]['stations'][station] = recipe
+    recipes[recipe_dict[recipe_name]]['stations'][station] = station_recipe # ugh again
+
 
 if __name__ == '__main__':
   main()
