@@ -21,17 +21,17 @@ const styles = (theme) => ({
 
 class MainCard extends Component {
 
+  itemName = () => { return recipes[this.props.item].recipe_name; }
+
   render() {
     const { classes } = this.props;
 
     return (
       <Card className={classes.card}>
       <CardContent>
-        <Typography variant="h5">
-          {recipes[this.props.item].recipe_name}
-        </Typography>
+        <Typography variant="h5"> {this.itemName()} </Typography>
         <Divider className={classes.divider} />
-        <ImageLoader picture={recipes[this.props.item].recipe_name} />
+        <ImageLoader picture={this.itemName()} />
       </CardContent>
     </Card>)
   }

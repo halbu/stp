@@ -27,17 +27,17 @@ const styles = (theme) => ({
 
 class CraftingStationCard extends Component {
 
+  itemName = () => { return this.props.crafting_station; }
+
   render() {
     const { classes } = this.props;
 
     return (
       <Card className={classes.card} style={{backgroundColor: this.props.myColor}} onClick={this.clickHandler}>
         <CardContent>
-          <Typography variant="h5">
-            {this.props.crafting_station}
-          </Typography>
+          <Typography variant="h5"> {this.itemName()} </Typography>
           <Divider className={classes.divider} />
-          <ImageLoader picture={this.props.crafting_station} />
+          <ImageLoader picture={this.itemName()} />
         </CardContent>
       </Card>
     )
