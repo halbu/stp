@@ -57,6 +57,7 @@ class App extends Component {
   }
 
   handleChange (selectedOption) {
+    this.state.history.push(this.state.activeItemNumber);
     this.setState({ activeItemNumber: selectedOption.value, activeStationNumber: 0 });
   }
 
@@ -65,9 +66,7 @@ class App extends Component {
   }
 
   handleStationChange = (newStationNumber) => {
-    this.state.history.push(this.state.activeStationNumber);
     this.setState({activeStationNumber: newStationNumber});
-    this.render();
   }
 
   previousRecipeName() {
@@ -83,9 +82,17 @@ class App extends Component {
     const { classes } = this.props;
     const { selectedOption } = this.state;
 
+    console.log(this.state.history);
+
     return (
       <div className="App">
         <header className="App-header">
+          {/* */}
+          <div style={{backgroundColor: '#000', color: '#fff', width: '100%', textAlign: 'right'}}>
+            <a href="#" style={{color: '#fff', textDecoration: 'none', textDecorationColor: '#fff'}}>about&nbsp;</a>
+          </div>
+
+          {/* upper section - title and search field */}
           <div style={{backgroundColor: '#606060', width: '100%'}}>
             <Typography className={classes.titlediv} variant="h5">
               stationeers quick reference
@@ -100,6 +107,7 @@ class App extends Component {
             </div>
           </div>
 
+          {/* info section - cards and headings */}
           <div style={{ maxWidth: 1000 }}>
             <Grid container className={classes.cardcontainer} direction="row" spacing={40}>
 
