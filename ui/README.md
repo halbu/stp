@@ -1,9 +1,5 @@
 # React UI for Stationeers Quick Reference Tool
 
-## building
+## building & running
 
-git clone, cd stp/ui, yarn, yarn start
-
-## tests?
-
-no
+`yarn` to install dependencies, `yarn start` to run the application
