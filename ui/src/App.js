@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Select from 'react-select';
 import IngredientCard from './ingredient-card/Ingredient-Card';
+import ConditionCard from './condition-card/Condition-Card';
 import CraftingStationCard from './crafting-station-card/Crafting-Station-Card';
 
 const styles = (theme) => ({
@@ -65,6 +66,10 @@ class App extends Component {
     return recipes[this.state.activeItemNumber];
   }
 
+  recipesForActiveStation() {
+   return this.activeItem().stations[Object.keys(this.activeItem().stations)[this.state.activeStationNumber]];
+  }
+
   handleStationChange = (newStationNumber) => {
     this.setState({activeStationNumber: newStationNumber});
   }
@@ -81,8 +86,6 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     const { selectedOption } = this.state;
-
-    console.log(this.state.history);
 
     return (
       <div className="App">
@@ -127,9 +130,14 @@ class App extends Component {
 
               <Grid item className={classes.griditem} xs={4}>
                 Requires<br/><br/>
-                {this.activeItem().stations[Object.keys(this.activeItem().stations)[this.state.activeStationNumber]].ingredients.map((item, i) => {
-                    return ( <IngredientCard key={i} item={item} /> )
-                  })}
+                
+                {/* pull ingredients/conditions separately. Only renders top recipe from stack for now */}
+                {this.recipesForActiveStation()[0].ingredients.map((item, i) => {
+                   return ( <IngredientCard key={i} item={item} /> )
+                 })}
+                {Object.keys(this.recipesForActiveStation()[0].conditions).map((k, item) => {
+                   return ( <ConditionCard key={item} cond={k} item={this.recipesForActiveStation()[0].conditions[k]} /> )
+                 })}
               </Grid>
             </Grid>
           </div>

@@ -7,30 +7,29 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = (theme) => ({
   card: {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#e8d8d8',
     margin: "0 auto",
     marginBottom: 6,
     width: 300,
   },
 });
 
-class IngredientCard extends Component {
-
- itemName = () =>    { return Object.keys(this.props.item)[0] };
- itemAmount = () =>  { return this.props.item[this.itemName()] };
-
+class ConditionCard extends Component {
   render() {
     const { classes } = this.props;
     
     return (
-     <Card className={classes.card}>
+      <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5">
-          {this.itemName()}: {this.itemAmount()}
+          {this.props.cond}
+        </Typography>
+        <Typography variant="h6">
+          Low {this.props.item["Start"]} — High {this.props.item["Stop"]}
         </Typography>
       </CardContent>
     </Card>)
   }
 }
 
-export default withStyles(styles)(IngredientCard);
+export default withStyles(styles)(ConditionCard);
