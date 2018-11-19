@@ -14,13 +14,10 @@ counter = 0
 
 def main():
   files = os.listdir('./data')
-
   for myfile in files:
     parse_into_recipes(myfile)
-
   f = open("ui/src/assets/output.json", "w")
   f.write(json.dumps(recipes))
-
 
 def parse_into_recipes(myfile):
   global counter # ugh
@@ -42,12 +39,20 @@ def parse_into_recipes(myfile):
 
     station_recipe = {}
     station_recipe['ingredients'] = []
+    station_recipe['conditions'] = {}
 
     for c in recipe_data[1]:
       ingredient = {}
-      ingredient[c.tag] = c.text
-      if c.text is not "0":
-        station_recipe['ingredients'].append(ingredient)
+
+      if "Temperature" in c.tag or "Pressure" in c.tag:
+        print(recipe_name)
+        station_recipe['conditions'][c.tag] = {}
+        for i in c:
+          station_recipe['conditions'][c.tag][i.tag] = i.text
+      else:
+        ingredient[c.tag] = c.text
+        if c.text is not "0":
+          station_recipe['ingredients'].append(ingredient)
         
     if recipe_name not in parsed:
       recipes.append(recipe)
