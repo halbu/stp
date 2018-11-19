@@ -60,7 +60,10 @@ def parse_into_recipes(myfile):
       parsed.append(recipe_name)
       counter += 1
 
-    recipes[recipe_dict[recipe_name]]['stations'][station] = station_recipe # ugh again
+    if station not in recipes[recipe_dict[recipe_name]]['stations']:
+      recipes[recipe_dict[recipe_name]]['stations'][station] = []
+
+    recipes[recipe_dict[recipe_name]]['stations'][station].append(station_recipe)
 
 
 if __name__ == '__main__':
