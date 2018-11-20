@@ -44,7 +44,7 @@ class ImageLoader extends Component {
                 return (<img className={classes.image}  src={asset} alt="Sprite for {this.props.picture}" />)
             }
             catch (e) {
-                console.log('failed to find ' + this.props.picture);
+                console.log('Failed to find ' + this.props.picture + ".png");
                 return null; // Oh well, never mind!
             }
         }
