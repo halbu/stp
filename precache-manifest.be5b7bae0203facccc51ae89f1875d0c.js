@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitCentrifuge.f6b57b17.png"
   },
   {
-    "revision": "f186766c2a4e6e0754c8",
+    "revision": "9f76cf4aa91409584091",
     "url": "/stp/static/css/main.45b89ac7.chunk.css"
   },
   {
-    "revision": "b10e151292f6e7611af2",
-    "url": "/stp/static/js/1.b10e1512.chunk.js"
+    "revision": "3e218f76dffc58a21d77",
+    "url": "/stp/static/js/1.3e218f76.chunk.js"
   },
   {
     "revision": "66d339ab9cf5bc7f1b4e",
@@ -296,8 +296,8 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitBasket.a1684c82.png"
   },
   {
-    "revision": "f186766c2a4e6e0754c8",
-    "url": "/stp/static/js/main.f186766c.chunk.js"
+    "revision": "9f76cf4aa91409584091",
+    "url": "/stp/static/js/main.9f76cf4a.chunk.js"
   },
   {
     "revision": "3acd894e32520bcedd19e34c7bcc6716",
@@ -592,7 +592,7 @@ self.__precacheManifest = [
     "url": "/stp/static/media/HydraulicPipeBender.0d482d21.png"
   },
   {
-    "revision": "e8a1e60347a5cb44ff0f7426e2f68486",
+    "revision": "e20f378f5fab53d11596b9a2facab918",
     "url": "/stp/index.html"
   }
 ];
