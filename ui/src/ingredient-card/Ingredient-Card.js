@@ -21,9 +21,10 @@ class IngredientCard extends Component {
 
   render() {
     const { classes } = this.props;
-
+    let bgCol = this.itemName() === "Energy" ? "#f0f0d8":
+                this.itemName() === "Time" ? '#e0f0e0' : '#e0e0e0'
     return (
-      <Card style={{backgroundColor: this.itemName()==="Energy"?"#f0f0d8":'#e0e0e0'}} className={classes.card}>
+      <Card style={{backgroundColor: bgCol}} className={classes.card}>
         <CardContent>
           <Typography variant="h5">
             {this.itemName()}: {this.itemAmount()}
