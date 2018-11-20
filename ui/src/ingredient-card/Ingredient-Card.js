@@ -21,15 +21,15 @@ class IngredientCard extends Component {
 
   render() {
     const { classes } = this.props;
-    
+
     return (
-     <Card className={classes.card}>
-      <CardContent>
-        <Typography variant="h5">
-          {this.itemName()}: {this.itemAmount()}
-        </Typography>
-      </CardContent>
-    </Card>)
+      <Card style={{backgroundColor: this.itemName()==="Energy"?"#f0f0d8":'#e0e0e0'}} className={classes.card}>
+        <CardContent>
+          <Typography variant="h5">
+            {this.itemName()}: {this.itemAmount()}
+          </Typography>
+        </CardContent>
+      </Card>)
   }
 }
 
