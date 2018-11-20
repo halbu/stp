@@ -21,6 +21,8 @@ def main():
 
 def parse_into_recipes(myfile):
   global counter # ugh
+  if myfile == "ingots.xml":
+    return
   print(myfile)
 
   e = xml.etree.ElementTree.parse('./data/' + myfile).getroot()
@@ -45,7 +47,6 @@ def parse_into_recipes(myfile):
       ingredient = {}
 
       if "Temperature" in c.tag or "Pressure" in c.tag:
-        print(recipe_name)
         station_recipe['conditions'][c.tag] = {}
         for i in c:
           station_recipe['conditions'][c.tag][i.tag] = i.text
