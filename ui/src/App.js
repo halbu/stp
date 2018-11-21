@@ -67,7 +67,7 @@ class App extends Component {
   }
 
   recipesForActiveStation() {
-   return this.activeItem().stations[Object.keys(this.activeItem().stations)[this.state.activeStationNumber]];
+    return this.activeItem().stations[Object.keys(this.activeItem().stations)[this.state.activeStationNumber]];
   }
 
   handleStationChange = (newStationNumber) => {
@@ -133,11 +133,11 @@ class App extends Component {
                 
                 {/* pull ingredients/conditions separately. Only renders top recipe from stack for now */}
                 {this.recipesForActiveStation()[0].ingredients.map((item, i) => {
-                   return ( <IngredientCard key={i} item={item} /> )
-                 })}
+                  return ( <IngredientCard key={i} item={item} /> )
+                })}
                 {Object.keys(this.recipesForActiveStation()[0].conditions).map((k, item) => {
-                   return ( <ConditionCard key={item} cond={k} item={this.recipesForActiveStation()[0].conditions[k]} /> )
-                 })}
+                  return ( <ConditionCard key={item} cond={k} item={this.recipesForActiveStation()[0].conditions[k]} /> )
+                })}
               </Grid>
             </Grid>
           </div>
