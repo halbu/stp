@@ -10,7 +10,6 @@ import xml.etree.ElementTree
 recipes = []
 recipe_dict = {} #this is bad
 parsed = []
-counter = 0
 
 def main():
   files = os.listdir('./data')
@@ -20,7 +19,7 @@ def main():
   f.write(json.dumps(recipes))
 
 def parse_into_recipes(myfile):
-  global counter # ugh
+  counter = 0
   if myfile == "ingots.xml":
     return
   print(myfile)

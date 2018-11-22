@@ -16,8 +16,8 @@ const styles = (theme) => ({
 
 class IngredientCard extends Component {
 
- itemName = () =>    { return Object.keys(this.props.item)[0] };
- itemAmount = () =>  { return this.props.item[this.itemName()] };
+  itemName = () =>    { return Object.keys(this.props.item)[0] };
+  itemAmount = () =>  { return this.props.item[this.itemName()] };
 
   render() {
     const { classes } = this.props;
