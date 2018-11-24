@@ -8,8 +8,9 @@ import os
 import xml.etree.ElementTree
 
 recipes = []
-recipe_dict = {} #this is bad
+recipe_index_tracking_dict = {} #this is bad
 parsed = []
+counter = 0
 
 def main():
   files = os.listdir('./data')
@@ -19,7 +20,7 @@ def main():
   f.write(json.dumps(recipes))
 
 def parse_into_recipes(myfile):
-  counter = 0
+  global counter
   if myfile == "ingots.xml":
     return
   print(myfile)
@@ -32,12 +33,13 @@ def parse_into_recipes(myfile):
 
   for recipe_data in e.findall('.//RecipeData'):
     recipe = {}
-    recipe_name = recipe_data[0].text
+    item_name = recipe_data[0].text
 
-    recipe['recipe_name'] = recipe_name
+    recipe['item_name'] = item_name
     recipe['index_value'] = counter
     recipe['stations'] = {}
 
+    # get ingredients and environmental conditions
     station_recipe = {}
     station_recipe['ingredients'] = []
     station_recipe['conditions'] = {}
@@ -54,17 +56,20 @@ def parse_into_recipes(myfile):
         if c.text is not "0":
           station_recipe['ingredients'].append(ingredient)
         
-    if recipe_name not in parsed:
+    # if this item_name doesn't already exist in the item_name list, add it to the parsed
+    # array and increment the coutner
+    if item_name not in parsed:
       recipes.append(recipe)
-      recipe_dict[recipe_name] = counter
-      parsed.append(recipe_name)
+      recipe_index_tracking_dict[item_name] = counter
+      parsed.append(item_name)
       counter += 1
 
-    if station not in recipes[recipe_dict[recipe_name]]['stations']:
-      recipes[recipe_dict[recipe_name]]['stations'][station] = []
+    rec_index = recipe_index_tracking_dict[item_name]
 
-    recipes[recipe_dict[recipe_name]]['stations'][station].append(station_recipe)
+    if station not in recipes[rec_index]['stations']:
+      recipes[rec_index]['stations'][station] = []
 
+    recipes[rec_index]['stations'][station].append(station_recipe)
 
 if __name__ == '__main__':
   main()

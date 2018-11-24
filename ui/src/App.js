@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import recipes from '../src/assets/output.json';
+import recipes from './assets/output.json';
 import { withStyles } from '@material-ui/core/styles';
 import MainCard from './main-card/Main-Card';
 import Grid from '@material-ui/core/Grid';
@@ -44,17 +44,17 @@ class App extends Component {
     // this could definitely be less ugly
     for (var i=0; i!==recipes.length; ++i) {
       this.state.options.push({
-        label: recipes[i].recipe_name, value: recipes[i].index_value
+        label: recipes[i].item_name, value: recipes[i].index_value
       });
     }
   }
 
   findNameByIndex(indexValue) {
-    return recipes[indexValue].recipe_name;
+    return recipes[indexValue].item_name;
   }
 
   componentDidMount() {
-    this.handleChange( {value: 119});
+    this.handleChange({value: 119});
   }
 
   handleChange (selectedOption) {
@@ -79,7 +79,7 @@ class App extends Component {
       return 'No previous recipe';
     } else {
       var previousRecipeIndex = this.state.history[this.state.history.length - 1];
-      return recipes[previousRecipeIndex].recipe_name;
+      return recipes[previousRecipeIndex].item_name;
     }
   }
 

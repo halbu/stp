@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import recipes from '../../src/assets/output.json';
+import recipes from '../assets/output.json';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -21,7 +21,7 @@ const styles = (theme) => ({
 
 class MainCard extends Component {
 
-  itemName = () => { return recipes[this.props.item].recipe_name; }
+  itemName = () => { return recipes[this.props.item].item_name; }
 
   render() {
     const { classes } = this.props;
