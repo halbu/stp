@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitCentrifuge.f6b57b17.png"
   },
   {
-    "revision": "9f76cf4aa91409584091",
-    "url": "/stp/static/css/main.45b89ac7.chunk.css"
+    "revision": "4daaec0b0ede8c2f3e8e",
+    "url": "/stp/static/css/main.02f43509.chunk.css"
   },
   {
     "revision": "3e218f76dffc58a21d77",
@@ -296,8 +296,8 @@ self.__precacheManifest = [
     "url": "/stp/static/media/ItemKitBasket.a1684c82.png"
   },
   {
-    "revision": "9f76cf4aa91409584091",
-    "url": "/stp/static/js/main.9f76cf4a.chunk.js"
+    "revision": "4daaec0b0ede8c2f3e8e",
+    "url": "/stp/static/js/main.4daaec0b.chunk.js"
   },
   {
     "revision": "3acd894e32520bcedd19e34c7bcc6716",
@@ -592,7 +592,7 @@ self.__precacheManifest = [
     "url": "/stp/static/media/HydraulicPipeBender.0d482d21.png"
   },
   {
-    "revision": "e20f378f5fab53d11596b9a2facab918",
+    "revision": "da1cbc5ddfa841ff7b7d2d9a66da3c3f",
     "url": "/stp/index.html"
   }
 ];
