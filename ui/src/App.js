@@ -90,11 +90,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* */}
-          <div style={{backgroundColor: '#000', color: '#fff', width: '100%', textAlign: 'right'}}>
-            <a href="#" style={{color: '#fff', textDecoration: 'none', textDecorationColor: '#fff'}}>about&nbsp;</a>
-          </div>
-
+        
           {/* upper section - title and search field */}
           <div style={{backgroundColor: '#606060', width: '100%'}}>
             <Typography className={classes.titlediv} variant="h5">
