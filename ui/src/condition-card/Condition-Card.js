@@ -22,7 +22,7 @@ class ConditionCard extends Component {
       <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5">
-          {this.props.cond}
+          {this.props.cond}:
         </Typography>
         <Typography variant="h6">
           Low {this.props.item["Start"]} — High {this.props.item["Stop"]}
