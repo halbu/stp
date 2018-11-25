@@ -55,9 +55,13 @@ def parse_into_recipes(myfile):
         ingredient[c.tag] = c.text
         if c.text is not "0":
           station_recipe['ingredients'].append(ingredient)
+
+    # hacky custom sort - sort Time and Energy ingredients to the top of the
+    # ingredient array so that they will always appear first in the UI
+    station_recipe['ingredients'].sort(key=lambda tup: custom_sort_func(list(tup.keys())[0]))
         
-    # if this item_name doesn't already exist in the item_name list, add it to the parsed
-    # array and increment the coutner
+    # if this item_name doesn't already exist in the item_name list, add it to
+    # the parsed array and increment the counter
     if item_name not in parsed:
       recipes.append(recipe)
       recipe_index_tracking_dict[item_name] = counter
@@ -70,6 +74,13 @@ def parse_into_recipes(myfile):
       recipes[rec_index]['stations'][station] = []
 
     recipes[rec_index]['stations'][station].append(station_recipe)
+
+def custom_sort_func(item):
+    custom_sort_order = ["Time", "Energy"]
+    if item in custom_sort_order:
+      return custom_sort_order.index(item)
+    else:
+      return 99
 
 if __name__ == '__main__':
   main()
