@@ -1,5 +1,5 @@
 # stp
-quick reference tool for the game Stationeers. React &amp; a bit of Python
+quick reference tool for the game Stationeers. React, Material-UI &amp; a bit of Python
 
 ## how to use
 
